@@ -4,11 +4,6 @@
 @implementation HtmlSoup
 RCT_EXPORT_MODULE()
 
-- (NSNumber *)multiply:(double)a b:(double)b {
-    NSNumber *result = @(a * b);
-    return result;
-}
-
 // HTML Parsing
 - (NSDictionary *)parse:(NSString *)html {
     HtmlSoupImp *soup = [[HtmlSoupImp alloc] init];
