@@ -95,6 +95,15 @@ export interface Spec extends TurboModule {
    * @platform android, ios
    */
   getAttributeByQuery(html: string, cssQuery: string, attributeName: string): string;
+
+  /**
+   * Get the next sibling element of the first element matching the CSS selector
+   * @param html HTML string to parse
+   * @param cssQuery CSS selector to find element
+   * @returns Element object of the next sibling or null if not found
+   * @platform android, ios
+   */
+  nextSibling(html: string, cssQuery: string): Element | null;
 }
 
 export default TurboModuleRegistry.getEnforcing<Spec>('HtmlSoup');
