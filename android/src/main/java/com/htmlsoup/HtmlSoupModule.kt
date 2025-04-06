@@ -124,6 +124,22 @@ class HtmlSoupModule(reactContext: ReactApplicationContext) :
     }
   }
 
+  // Next Sibling Operation
+  
+  override fun nextSibling(html: String, cssQuery: String): WritableMap? {
+    try {
+      val doc = Jsoup.parse(html)
+      val element = doc.select(cssQuery).first()
+      val nextSibling = element?.nextElementSibling()
+      
+      return nextSibling?.let { convertElementToMap(it) }
+    } catch (e: Exception) {
+      // Return null on error
+    }
+    
+    return null
+  }
+
   // Helper Methods
 
   private fun convertElementToMap(element: Element): WritableMap? {
