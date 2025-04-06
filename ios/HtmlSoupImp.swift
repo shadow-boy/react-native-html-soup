@@ -118,6 +118,24 @@ open class HtmlSoupImp: NSObject {
     return ""
   }
   
+  // MARK: - Next Sibling Operation
+  
+  @objc
+  open func nextSibling(_ html: String, cssQuery: String) -> [String: Any]? {
+    do {
+      let doc = try SwiftSoup.parse(html)
+      if let element = try doc.select(cssQuery).first() {
+        if let nextSibling = try element.nextElementSibling() {
+          return convertElementToDict(nextSibling)
+        }
+      }
+    } catch {
+      // Return nil on error
+    }
+    
+    return nil
+  }
+  
   // MARK: - Helper Methods
   
   private func convertElementToDict(_ element: SwiftSoup.Element) -> [String: Any]? {
