@@ -21,6 +21,13 @@ RCT_EXPORT_MODULE()
     return [soup selectFirst:html cssQuery:cssQuery];
 }
 
+// Next Sibling
+- (NSDictionary *)nextSibling:(NSString *)html cssQuery:(NSString *)cssQuery {
+    HtmlSoupImp *soup = [[HtmlSoupImp alloc] init];
+    return [soup nextSibling:html cssQuery:cssQuery];
+}
+
+
 // Text Extraction
 - (NSString *)getText:(NSString *)html cssQuery:(NSString *)cssQuery {
     HtmlSoupImp *soup = [[HtmlSoupImp alloc] init];
