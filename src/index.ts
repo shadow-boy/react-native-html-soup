@@ -90,6 +90,17 @@ export function getAttributeByQuery(
   return NativeHtmlSoup.getAttributeByQuery(html, cssQuery, attributeName);
 }
 
+/**
+ * Get the next sibling element of the first element matching the CSS selector
+ * @param html HTML string to parse
+ * @param cssQuery CSS selector to find element
+ * @returns Element object of the next sibling or null if not found
+ * @platform android, ios
+ */
+export function nextSibling(html: string, cssQuery: string): Element | null {
+  return NativeHtmlSoup.nextSibling(html, cssQuery);
+}
+
 const HtmlSoupModule = {
   parse,
   select,
@@ -98,6 +109,7 @@ const HtmlSoupModule = {
   getHtml,
   getAttributesByQuery,
   getAttributeByQuery,
+  nextSibling,
 };
 
 export default HtmlSoupModule; 
