@@ -1,6 +1,6 @@
 {
   "name": "react-native-html-soup",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "React Native module for parsing HTML using jsoup (Android) and SwiftSoup (iOS). Provides a unified API to select elements and extract data",
   "source": "./src/index.ts",
